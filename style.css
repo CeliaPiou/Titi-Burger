@@ -121,7 +121,7 @@ body {
 
 }
 
-#select-your-burger {
+#select-your-burger, #select-your-aside {
     display:flex;
     flex-direction: column;
     margin-left: auto;
@@ -129,7 +129,7 @@ body {
     margin-bottom: 50px;
     width: 80vw;
 
-    .burger-to-choose {
+    .burger-to-choose, .aside-to-choose {
         display:flex;
         justify-content: space-between;
         width: 100%;
