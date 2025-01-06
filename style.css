@@ -15,11 +15,14 @@
 body {
     margin:0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: all 0.5s ease-in-out;
     a {
         text-decoration: none;
         color:inherit;
     }
-
+    a:hover {
+        cursor:pointer;
+    }
     .button-type {
         margin-left: auto;
         margin-right: auto;
@@ -34,7 +37,7 @@ body {
         color: var(--mauve);
         margin: 0;
         font-family: 'homeday';
-        font-size: 2.5rem;
+        font-size: 2.7rem;
         font-weight:100;
     }
 }
@@ -275,6 +278,7 @@ header {
     background-size: cover;
     height: 70vh;
     width: 100vw;
+    align-items: start;
     display:flex;
     flex-direction:row;
     justify-content: space-between;
@@ -332,7 +336,7 @@ header {
 .two-parts {
     padding: 50px 0 50px 0;
     display:flex;
-    width: 85vw;
+    width: 70vw;
     margin-left: auto;
     margin-right: auto;
     margin-top: 0;
@@ -342,7 +346,8 @@ header {
     h3 {
         color: var(--dk-grey);
         margin: 0;
-        font-size: 1.3rem;
+        font-size: 1.7rem;
+        font-weight: 500;
     }
 
     div:first-child {
@@ -353,7 +358,7 @@ header {
         }
         p {
             color:var(--grey);
-            font-size: 1.2rem;
+            font-size: 1.7rem;
         }
     }
 
@@ -362,8 +367,11 @@ header {
 
         p {
             color:var(--grey);
-            font-size: 1.2rem;
+            font-size: 1.8rem;
             margin: 50px 0 20px 0;
+            height: 40%;
+            display: flex;
+            align-items: center;
         }
 
         input {
@@ -422,7 +430,7 @@ header {
 }
 
 #last-actus {
-    width: 85vw;
+    width: 70vw;
     display:flex;
     margin:auto;
     justify-content: space-between;
@@ -444,7 +452,7 @@ header {
         }
 
         p {
-            font-size: 0.8rem;
+            font-size: 1.1rem;
             color: var(--grey);
         }
 
@@ -466,7 +474,7 @@ header {
 #newsletter {
     margin-top: 50px;
     width: 100vw;
-    height: 300px;
+    height: 400px;
     background-color: var(--lt-grey);
     display: flex;
     justify-content: center;
