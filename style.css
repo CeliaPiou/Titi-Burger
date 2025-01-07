@@ -15,7 +15,6 @@
 body {
     margin:0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    transition: all 0.5s ease-in-out;
     a {
         text-decoration: none;
         color:inherit;
@@ -41,6 +40,122 @@ body {
         font-weight:100;
     }
 }
+
+main {
+    transition: all 1s ease-in-out;
+}
+
+/* PAIEMENT */
+
+#pick-your-cc {
+    display:flex;
+    flex-direction: column;
+    width: 80vw;
+    margin:auto;
+    align-items: center;
+
+    div {
+        width: 100%;
+        display:flex;
+
+        div {
+            display:flex;
+            align-items: center;
+            justify-content: center;
+
+            label, input {
+                padding:30px;
+                display:flex;
+                align-items:center;
+
+                img {
+                    padding: 30px;
+                }
+            }
+        }
+    }
+}
+
+#payment {
+    display:flex;
+    width: 80vw;
+    margin:auto;
+
+    #you-selected-visa {
+        width: 50%;
+        margin: 50px;
+
+        #card-selected {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+
+            input, label {
+                display:flex;
+                align-items:center;
+                padding: 15px;
+                width: auto;
+
+                img {
+                    padding: 20px;
+                }
+            }
+        }
+
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+
+            .grey-container {
+                background-color: #f1efef;
+                margin: 10px 5px 10px 5px;
+                padding: 20px;
+                width: 100%;
+                display:flex;
+                align-items: center;
+
+                input {
+                    border:none;
+                    padding: 15px;
+                }
+
+                label {
+                    width: 30%;
+                }
+            }
+
+            button {
+                align-self: center;
+            }
+        }
+    }
+
+    #ad {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 40%;
+        padding: 15px;
+
+        p {
+            border: 3px solid black;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.5rem;
+        }
+        img {
+            width: auto;
+            margin-bottom: 30px;
+        }
+    }
+}
+
+
 
 /* START CLICK AND COLLECT */
 
@@ -78,12 +193,17 @@ body {
 
         #recap-order {
             display: flex;
-            justify-content: space-around;
-            width: 40%;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+
+            .important {
+                transform:scale(1.2);
+            }
 
             .your-order-item {
                 justify-self: self-start;
-                background-color: #576d8b83;
+                background-color: #a9b5c7;
                 border-radius: 10px;
                 width: 60px;
                 height: 60px;
@@ -182,6 +302,63 @@ body {
         }
     }
 }
+
+#select-your-drink {
+    display: column;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    width: 80vw;
+
+    div {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .drink-to-choose {
+            width: 50%;
+
+            input {
+                margin: 20px;
+                width: 30px;
+            }
+
+            label {
+                display:flex;
+                align-items: center;
+                justify-content: space-between;
+                width: 100%;
+
+                span {
+                    font-size: 1.4rem;
+                    text-align: left;
+                    width: 50%;
+                }
+
+                div {
+                    background-color: var(--lt-grey);
+                    height: 180px;
+                    width: 120px;
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 10px;
+
+                    img {
+                        width: 150px;
+                        aspect-ratio: 1/1;
+                        border-radius: 10px;
+                        object-fit: cover;
+                        object-position: bottom;
+                    }
+                }
+
+        }
+        }
+
+    }
+}
+
 
 /* CLICK */
 
@@ -369,7 +546,7 @@ header {
             color:var(--grey);
             font-size: 1.8rem;
             margin: 50px 0 20px 0;
-            height: 40%;
+            height: auto;
             display: flex;
             align-items: center;
         }
@@ -444,6 +621,7 @@ header {
         h4 {
             font-weight: 100;
             font-size: 1.02rem;
+            text-wrap: nowrap;
         }
 
         img {
@@ -548,7 +726,7 @@ header {
 footer {
     background-color: var(--footer-blue);
     width: 100vw;
-    height: 200px;
+    height: auto;
     display: flex;
     justify-content: space-around;
     color:white;
@@ -563,6 +741,189 @@ footer {
             img {
                 width: 20px;
                 height: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 1100px){
+
+    .two-parts {
+        flex-direction: column;
+        align-items: center;
+        width: 90vw;
+        text-align: center;
+
+        div:first-child {
+            width: 100%;
+        }
+
+    }
+
+    #select-your-burger, #select-your-aside, #select-your-drink {
+        .burger-to-choose, .aside-to-choose, .drink-to-choose {
+
+            p {
+                display:none;
+            }
+            label {
+                display: flex;
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width : 700px) {
+
+    /* CLICK & COLLECT */
+
+    #click-and-collect {
+        p {
+            width: 90vw;
+        }
+    }
+
+    #our-burgers {
+        width: 90vw;
+        flex-direction: column-reverse;
+
+        #left-part {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        #right-part {
+            width: 100%;
+
+            #recap-order {
+                transform: scale(0.7);
+                width: 100%;
+
+            }
+        }
+    }
+
+    #pick-your-cc {
+        div {
+            flex-direction: column;
+        }
+    }
+
+    #payment {
+        flex-direction: column;
+        width: 100vw;
+        align-items: center;
+
+        #you-selected-visa {
+            width: 100%;
+
+
+            form {
+                .grey-container {
+                    width: 90%;
+
+                    input {
+                        width: 50%;
+                    }
+                }
+
+                .small {
+                    width: 10px;
+                }
+            }
+        }
+
+        #ad {
+            width: 80vw;
+            img {
+                width: 100%;
+            }
+        }
+
+    }
+
+
+    /* INDEX */
+
+    #with-pic {
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+
+        div {
+            #navigation-bar {
+                display: none;
+            }
+
+            #input-button {
+                display:flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-evenly;
+                width: 100vw;
+                height: 200px;
+
+                input {
+                    transform: scale(1.5);
+                }
+            }
+        }
+    }
+
+    .container-of-burgers {
+        transform: scale(1.7);
+        text-wrap: nowrap;
+        height: auto;
+        margin: 50px 0 70px 0;
+
+        img {
+            margin: 2px;
+            height: 100%;
+        }
+    }
+
+    #nos-actus {
+        div {
+            .dashed {
+                height: 100px;
+            }
+            h2 {
+                img {
+                    display:none;
+                }
+            }
+        }
+    }
+
+    #last-actus {
+        flex-direction: column;
+
+        div {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+    }
+
+    #newsletter {
+        #newsletter-form {
+            #email-input-newsletter {
+                h3 {display:none;}
+                justify-content: space-between;
+            }
+        }
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        ul {
+            padding: 0;
+
+            li {
+                text-align: center
             }
         }
     }

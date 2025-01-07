@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titi Burger</title>
+    <link href="/style.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <img src="img/logo.svg" alt="logo">
+        <div id="input-button">
+            <input type="button" href="click.html" value="Click & Collect">
+            <input type="button" value="Livraison">
+        </div>
+    </header>
+
+    <article id="our-burgers">
+        <div id="left-part">
+            <h1 class="order-number">Commande N° ###</h1>
+        </div>
+
+        <div id="right-part">
+            <div>
+                <div class="fine-line"></div>
+                <h2>Click & Collect</h2>
+                <div class="fine-line"></div>
+            </div>
+
+            <p>Commander et déguster</p>
+
+            <div id="recap-order">
+                <div class="your-order-item"><div></div></div>
+                <img src="/img/Line 12.png" width="10px" height="3px">
+                <div class="your-order-item"><div></div></div>
+                <img src="/img/Line 12.png" width="10px" height="3px">
+                <div class="your-order-item"><div></div></div>
+                <img src="/img/Line 12.png" width="10px" height="3px">
+                <div class="your-order-item"><div></div></div>
+                <img src="/img/Line 17.png" width="50px" height="3px">
+                <img src="/img/Bank Cards.png">
+            </div>
+        </div>
+    </article>
+
+    <section class="separative-dashed-line">
+    </section>
+
+    <div id="pick-your-cc">
+
+        <div>
+
+            <div>
+                <input type="radio" id="bitcoin">
+                <label for="bitcoin"><img src="/img/bitcoin.png" width="40px"> Bitcoin</label>
+            </div>
+
+            <div>
+                <input type="radio" id="visa">
+                <label for="visa"><img src="/img/visa.png" width="40px"> Visa</label>
+            </div>
+
+            <div>
+                <input type="radio" id="paypal">
+                <label for="paypal"><img src="/img/paypal.svg" width="40px"> Paypal</label>
+            </div>
+
+        </div>
+
+        <a href="#" class="button-type">Payer</a>
+
+    </div>
+
+    <div id="payment">
+
+        <div id="you-selected-visa">
+
+            <div id="card-selected">
+                <input type="radio" checked id="visa">
+                <label for="visa"><img src="/img/visa.png" width="40px"> Visa</label>
+            </div>
+
+            <form>
+
+                <div class="grey-container">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" required>
+                </div>
+
+                <div class="grey-container">
+                    <label for="cc-number">Numéro de carte</label>
+                    <input type="number" id="cc-number" required>
+                </div>
+
+                <div class="grey-container">
+                    <label for="expiration-date">Date d'expiration</label>
+                    <input type="number" size="30" class="small" id="expiration-date" max-length="2" required placeholder="01">
+                    <p>/</p>
+                    <input type="number" max-length="2" class="small" required placeholder="25">
+
+                </div>
+
+                <div class="grey-container">
+                    <label for="crypto">N° Crypto</label>
+                    <input type="text" id="crypto" required>
+                </div>
+
+                <button href="finalized.html" type="submit" class="button-type">Payer</button>
+
+            </form>
+
+        </div>
+
+        <div id="ad">
+            <p>Promo pour votre prochaine commande</p>
+            <img src="/img/publicite.png">
+        </div>
+    </div>
+
+    <footer>
+        <ul>
+            <li>Mentions Légales</li>
+            <li>CGU</li>
+            <li>CGV</li>
+        </ul>
+        <ul>
+            <li><em>Plan du Site</em></li>
+            <li>La Carte</li>
+            <li>Titi Story</li>
+            <li>Le Resto</li>
+            <li>Actu</li>
+        </ul>
+        <ul>
+            <li>Où nous trouver ?</li>
+            <img src="img/endroit.png" alt="Emplacement de notre restaurant" width="300px">
+        </ul>
+        <ul>
+            <li>Contact</li>
+            <li>Où nous trouver ?</li>
+            <li>FAQ</li>
+        </ul>
+        <ul>
+            <li><img src="img/instagram.svg"></li>
+            <li><img src="img/facebook.svg"></li>
+            <li><img src="img/tiktok.svg"></li>
+        </ul>
+    </footer>
+
+</body>
+</html>
