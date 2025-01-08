@@ -14,13 +14,14 @@ fetch("https://titi.startwin.fr/products/type/burger")
         `
         <input type="radio" name="burger" checked id="${eachburger.name}">
         <label for="${eachburger.name}">
-            <div class="bg-img"><img src=" ${eachburger.image}"></div>
-            <span>${eachburger.name}</span>
+            <div class="bg-img"><img alt="${eachburger.image}" src="${eachburger.image}"></div>
+            <strong>${eachburger.name}</strong>
+            <em> - ${eachburger.price.$numberDecimal}€</em>
         </label>
             <p>
             ${eachburger.description}
-            <em>${eachburger.price.$numberDecimal}€</em>
-            </p>        `
+            </p>
+        `
 
         listBurger.appendChild(oneBurgerDiv)
         oneBurgerDiv.style.margin = "5px";

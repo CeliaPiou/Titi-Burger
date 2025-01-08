@@ -304,7 +304,9 @@ main {
 }
 
 #select-your-drink {
-    display: column;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 50px;
@@ -312,52 +314,43 @@ main {
 
     div {
         width: 100%;
-        display: flex;
-        justify-content: space-between;
+        display:flex;
+        justify-content: space-around;
+        align-items: center;
 
-        .drink-to-choose {
-            width: 50%;
+        input {
+            margin: 25px;
+        }
 
-            input {
-                margin: 20px;
-                width: 30px;
+        label {
+            display:flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 30%;
+
+            img {
+                aspect-ratio: 1/1;
+                width: 150px;
+                object-fit: cover;
             }
 
-            label {
-                display:flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-
-                span {
-                    font-size: 1.4rem;
-                    text-align: left;
-                    width: 50%;
-                }
-
-                div {
-                    background-color: var(--lt-grey);
-                    height: 180px;
-                    width: 120px;
-                    display:flex;
-                    justify-content: center;
-                    align-items: center;
-                    border-radius: 10px;
-
-                    img {
-                        width: 150px;
-                        aspect-ratio: 1/1;
-                        border-radius: 10px;
-                        object-fit: cover;
-                        object-position: bottom;
-                    }
-                }
-
-        }
+            strong {
+                border-bottom: 1px solid black;
+                font-size: 1.3em;
+                padding: 15px;
+                margin: 20px;
+            }
         }
 
-    }
+        p {
+            width: 50%;
+        }
+
+
+
+        }
 }
+
 
 
 /* CLICK */

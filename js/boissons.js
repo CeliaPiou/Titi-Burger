@@ -12,11 +12,12 @@ fetch("https://titi.startwin.fr/products/type/boisson")
 
         oneDrinkDiv.innerHTML =
         `
-        <input type="radio" name="burger" checked id="${eachDrink.name}">
-        <label for="${eachDrink.name}">
-            <div class="bg-img"><img width="100px" src="${eachDrink.image}"></div>
-            <span>${eachDrink.name}</span>
+        <input type="radio" name="burger" checked id="${eachDrink.id}">
+        <label for="${eachDrink.id}" - ${eachDrink.price.$numberDecimal} ">
+            <img width="100px" src="${eachDrink.image}">
+            <strong>${eachDrink.name}</strong>
         </label>
+        <p>${eachDrink.description}</p>
         `
 
         listDrinks.appendChild(oneDrinkDiv)
