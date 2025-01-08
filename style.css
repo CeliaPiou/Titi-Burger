@@ -385,6 +385,10 @@ header {
             border: none;
             border-radius: 3px;
         }
+
+        input:hover {
+            cursor: pointer;
+        }
     }
 
 
@@ -451,7 +455,7 @@ header {
 /* ACCUEIL */
 
 #with-pic {
-    background-image: url(img/banniere.png);
+    background-image: url(/images/banniere.png);
     background-size: cover;
     height: 70vh;
     width: 100vw;
