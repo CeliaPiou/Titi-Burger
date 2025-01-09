@@ -27,9 +27,33 @@ fetch("https://titi.startwin.fr/products/type/dessert")
         oneDessert.style.margin = "5px";
 
     });
-
-    dessertList.innerHTML +=
-    '<a href="/5recap-click.html" class="button-type">Suivant</a>'
-
-
 } )
+
+
+
+// VERIFICATION QU'UN CHOIX A ETE FAIT
+
+let buttonNext = document.getElementById('button-submit');
+let formulaire = document.getElementById('select-your-aside');
+let i = 0;
+let checked = false;
+
+
+buttonNext.addEventListener('click', () => {
+    checked = false;
+
+    for (let i = 0; i < formulaire.length; i++) {
+
+        if (formulaire[i].checked) {
+            checked = true;
+            break;
+        }
+    }
+
+    if (checked) {
+        window.location.href = '/5recap-click.html';    }
+    else {
+        alert("Merci de sélectionner un de nos très bons desserts afin de pouvoir continuer.")
+    }
+
+})
