@@ -5,16 +5,18 @@ fetch("https://titi.startwin.fr/products/type/burger")
 .then(res => res.json())
 .then(data => {
 
+    let i = 0;
     data.forEach(eachburger => {
 
         let oneBurgerDiv = document.createElement('div');
         oneBurgerDiv.classList.add('burger-to-choose');
+        i++;
 
         oneBurgerDiv.innerHTML =
         `
-        <input type="radio" name="choix-burger" id="${eachburger.name}">
-        <label for="${eachburger.name}">
-            <div class="bg-img"><img alt="${eachburger.image}" src="${eachburger.image}"></div>
+        <input type="radio" name="choix-burger" id="hamburger${i}">
+        <label for="hamburger${i}">
+            <div class="bg-img"><img alt="${eachburger.name}" src="${eachburger.image}"></div>
             <strong>${eachburger.name}</strong>
             <em> - ${eachburger.price.$numberDecimal}€</em>
         </label>

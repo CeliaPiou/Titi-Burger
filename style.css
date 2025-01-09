@@ -445,6 +445,13 @@ header {
     }
 }
 
+#button-next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 70px;
+}
+
 /* ACCUEIL */
 
 #with-pic {

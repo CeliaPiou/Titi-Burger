@@ -5,21 +5,25 @@ fetch("https://titi.startwin.fr/products/type/accompagnement")
 .then(res => res.json())
 .then(data => {
 
-    data.forEach(eachburger => {
+    let i = 0;
+
+    data.forEach(eachAside => {
 
         let oneAsideDiv = document.createElement('div');
         oneAsideDiv.classList.add('aside-to-choose');
+        i++;
 
         oneAsideDiv.innerHTML =
+
         `
-        <input type="radio" name="burger" id="${eachburger.name}">
-        <label for="${eachburger.name}">
-            <div class="bg-img"><img src=" ${eachburger.image}"></div>
-            <span>${eachburger.name}</span>
+        <input type="radio" name="burger" id="accompagnement${i}">
+        <label for="accompagnement${i}">
+            <div class="bg-img"><img src=" ${eachAside.image}" alt="${eachAside.name}"></div>
+            <span>${eachAside.name}</span>
         </label>
             <p>
-            ${eachburger.description}
-            <em>${eachburger.price.$numberDecimal}€</em>
+            ${eachAside.description}
+            <em>${eachAside.price.$numberDecimal}€</em>
             </p>           `
 
         listAside.appendChild(oneAsideDiv)
