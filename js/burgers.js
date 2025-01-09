@@ -1,5 +1,7 @@
 const listBurger = document.getElementById('select-your-burger')
 
+localStorage.clear();
+
 
 fetch("https://titi.startwin.fr/products/type/burger")
 .then(res => res.json())
@@ -26,6 +28,7 @@ fetch("https://titi.startwin.fr/products/type/burger")
         `
 
         listBurger.appendChild(oneBurgerDiv)
+        oneBurgerDiv.id = `div${i}`
         oneBurgerDiv.style.margin = "5px";
 
     });
@@ -37,6 +40,8 @@ let buttonNext = document.getElementById('button-submit');
 let formulaire = document.getElementById('select-your-burger');
 let i = 0;
 let checked = false;
+let contentHtmlBurger = "";
+let goodDivBurger = "";
 
 
 buttonNext.addEventListener('click', () => {
@@ -46,12 +51,18 @@ buttonNext.addEventListener('click', () => {
 
         if (formulaire[i].checked) {
             checked = true;
+
+            goodDivBurger = document.getElementById(`div${i+1}`);
+            contentHtmlBurger = goodDivBurger.innerHTML;
+            localStorage.setItem('contentBurger', contentHtmlBurger);
+
             break;
         }
     }
 
     if (checked) {
-        window.location.href = '/2fries-click-collect.html';    }
+        window.location.href = '/2fries-click-collect.html';
+}
     else {
         alert("Merci de sélectionner un de nos délicieux burgers afin de pouvoir continuer.")
     }

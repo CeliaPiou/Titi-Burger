@@ -16,14 +16,15 @@ fetch("https://titi.startwin.fr/products/type/boisson")
         `
         <input type="radio" name="burger" id="boisson${i}">
         <label for="boisson${i}" - ${eachDrink.price.$numberDecimal} ">
-            <img width="100px" src="${eachDrink.image}" alt="${eachDrink.name}">
+            <div class="bg-img"><img alt="${eachDrink.name}" src="${eachDrink.image}"></div>
             <strong>${eachDrink.name}</strong>
+            <em> - ${eachDrink.price.$numberDecimal}€</em>
         </label>
         <p>${eachDrink.description}</p>
         `
 
-        listDrinks.appendChild(oneDrinkDiv)
-
+        listDrinks.appendChild(oneDrinkDiv);
+        oneDrinkDiv.id = `div${i}`
     });
 
 })
@@ -35,6 +36,11 @@ fetch("https://titi.startwin.fr/products/type/boisson")
 let buttonNext = document.getElementById('button-submit');
 let i = 0;
 let checked = false;
+let drinkSelected = "";
+
+let goodDivDrink = "";
+let contentHtmlDrink = "";
+
 
 
 buttonNext.addEventListener('click', () => {
@@ -44,6 +50,12 @@ buttonNext.addEventListener('click', () => {
 
         if (listDrinks[i].checked) {
             checked = true;
+
+            drinkSelected = listDrinks[i].id;
+            goodDivDrink = document.getElementById(`div${i+1}`);
+            contentHtmlDrink = goodDivDrink.innerHTML;
+            localStorage.setItem('contentForDrinks', contentHtmlDrink)
+
             break;
         }
     }

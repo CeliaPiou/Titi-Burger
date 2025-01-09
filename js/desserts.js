@@ -16,16 +16,15 @@ fetch("https://titi.startwin.fr/products/type/dessert")
         `
         <input type="radio" name="desert" id="dessert${i}">
             <label for="dessert${i}">
-                <div class="bg-img"><img src="${dessert.image}" alt="${dessert.name}"></div>
-                <span>${dessert.name}</span>
+                <div class="bg-img"><img alt="${dessert.name}" src="${dessert.image}"></div>
+                <strong>${dessert.name}</strong>
+                <em> - ${dessert.price.$numberDecimal}€</em>
             </label>
-            <p>
-            ${dessert.description}
-            <em>${dessert.price.$numberDecimal}€</em>
-            </p>
+            <p>${dessert.description}</p>
         `
 
-        dessertList.appendChild(oneDessert)
+        dessertList.appendChild(oneDessert);
+        oneDessert.id = `div${i}`
         oneDessert.style.margin = "5px";
 
     });
@@ -39,6 +38,9 @@ let buttonNext = document.getElementById('button-submit');
 let formulaire = document.getElementById('select-your-aside');
 let i = 0;
 let checked = false;
+let dessertSelected = "";
+let goodDivDessert = "";
+let contentHtmlDessert = "";
 
 
 buttonNext.addEventListener('click', () => {
@@ -48,14 +50,22 @@ buttonNext.addEventListener('click', () => {
 
         if (formulaire[i].checked) {
             checked = true;
+
+            dessertSelected = formulaire[i].id;
+
+            //Choisir la good div
+            goodDivDessert = document.getElementById(`div${i+1}`);
+            contentHtmlDessert = goodDivDessert.innerHTML;
+            localStorage.setItem("contentForDessert", contentHtmlDessert)
+
             break;
         }
     }
 
     if (checked) {
-        window.location.href = '/5recap-click.html';    }
+        window.location.href = '/5recap-click.html';
+    }
     else {
         alert("Merci de sélectionner un de nos très bons desserts afin de pouvoir continuer.")
     }
-
 })

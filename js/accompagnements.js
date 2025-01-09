@@ -14,19 +14,17 @@ fetch("https://titi.startwin.fr/products/type/accompagnement")
         i++;
 
         oneAsideDiv.innerHTML =
-
         `
         <input type="radio" name="burger" id="accompagnement${i}">
         <label for="accompagnement${i}">
-            <div class="bg-img"><img src=" ${eachAside.image}" alt="${eachAside.name}"></div>
-            <span>${eachAside.name}</span>
+            <div class="bg-img"><img alt="${eachAside.name}" src="${eachAside.image}"></div>
+            <strong>${eachAside.name}</strong>
+            <em> - ${eachAside.price.$numberDecimal}€</em>
         </label>
-            <p>
-            ${eachAside.description}
-            <em>${eachAside.price.$numberDecimal}€</em>
-            </p>           `
+        <p>${eachAside.description}</p>           `
 
-        listAside.appendChild(oneAsideDiv)
+        listAside.appendChild(oneAsideDiv);
+        oneAsideDiv.id = `div${i}`;
         oneAsideDiv.style.margin = "5px";
 
     });
@@ -40,6 +38,9 @@ let buttonNext = document.getElementById('button-submit');
 let formulaire = document.getElementById('select-your-aside');
 let i = 0;
 let checked = false;
+let asideSelected = "";
+let goodDivAside = "";
+let contentHtmlAside = "";
 
 
 buttonNext.addEventListener('click', () => {
@@ -49,6 +50,12 @@ buttonNext.addEventListener('click', () => {
 
         if (formulaire[i].checked) {
             checked = true;
+
+            asideSelected = formulaire[i].id;
+            goodDivAside = document.getElementById(`div${i+1}`);
+            contentHtmlAside = goodDivAside.innerHTML;
+            localStorage.setItem('contentAside', contentHtmlAside)
+
             break;
         }
     }
